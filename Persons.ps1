@@ -27,9 +27,7 @@ Try{
             )
         )
     )
-"@
-    $connectionString = "User Id=$($config.username);Password=$($config.password);Data Source=$dataSource"
-    
+"@    
     # Querying SQL
     $OracleSQLQuery = "WITH structure_path (st_nostr, st_lib, st_niveau, st_chemin) 
     AS(
@@ -68,6 +66,7 @@ Try{
     )
     "
     ### open up oracle connection to database ###
+    $connectionString = "User Id=$($config.username);Password=$($config.password);Data Source=$dataSource"
     $con = [Oracle.ManagedDataAccess.Client.OracleConnection]::new($connectionString)
     $con.Open()
     

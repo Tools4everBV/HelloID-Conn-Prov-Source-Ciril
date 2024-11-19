@@ -17,15 +17,6 @@
             }
         },
         {
-            "name": "Custom.Source",
-            "mode": "fixed",
-            "value": "Source Ciril",
-            "validation": {
-                "required": false
-            },
-            "convertToString": true
-        },
-        {
             "name": "Details.BirthDate",
             "mode": "field",
             "value": "BirthDate",
@@ -67,42 +58,6 @@
         }
     ],
     "contractMappings": [
-        {
-            "name": "Custom.CheminCompletStructure",
-            "mode": "field",
-            "value": "CheminCompletStructure",
-            "validation": {
-                "required": false
-            },
-            "convertToString": true
-        },
-        {
-            "name": "Custom.CodeStructure",
-            "mode": "field",
-            "value": "CodeStructure",
-            "validation": {
-                "required": false
-            },
-            "convertToString": true
-        },
-        {
-            "name": "Custom.LibelleStructure",
-            "mode": "field",
-            "value": "LibelleStructure",
-            "validation": {
-                "required": false
-            },
-            "convertToString": true
-        },
-        {
-            "name": "Custom.MailResponsable",
-            "mode": "field",
-            "value": "MailResponsable",
-            "validation": {
-                "required": false
-            },
-            "convertToString": true
-        },
         {
             "name": "Department.DisplayName",
             "mode": "field",

@@ -32,8 +32,8 @@ For this connector we use the Oracle database and queries.
 
 By using this connector you will have the ability to retrieve employee and contract data from the CIRIL HR system.
 
-Connecting to CIRIL is done using the full Oracle DB client. 
-To add the Oracle dll, just copy past the Oracle.ManagedDataAccess19.23.0.dll on HelloID agent server ans call it
+Connecting to CIRIL is done using the Oracle Data Access .dll. 
+To add the Oracle .dll, Copy/Paste the Oracle.ManagedDataAccess19.23.0.dll (located in directory assets https://github.com/Tools4everBV/HelloID-Conn-Prov-Source-Ciril/tree/main/assets) on HelloID agent server and specify is location in the HelloID source configuration tab
 
 ### Mappings
 A basic person and contract mapping is provided. Make sure to further customize these accordingly.

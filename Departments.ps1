@@ -45,6 +45,8 @@ Try{
     $cmd.CommandText = $OracleSQLQuery
     $Departments = [System.Data.DataTable]::new()
     $Departments.Load($cmd.ExecuteReader())
+    $result = [System.Collections.Generic.List[PSCustomObject]]::new()
+    
     foreach($item in $departments){
         $department = @{
             ExternalId  = $item.CODE_STRUCTURE

@@ -1,5 +1,6 @@
 # Getting variables from configuration tab
 $config = ConvertFrom-Json $configuration
+
 Try{
     # Initializing Oracle connexion
     Add-Type -Path $config.DLLPath
@@ -27,10 +28,10 @@ Try{
 "@   
     # Querying SQL
     $OracleSQLQuery ="
-    SELECT DISTINCT
-    H_VUE_RESP_HIE.CODE_STRUCTURE,
-    H_VUE_RESP_HIE.LIBELLE_STRUCTURE
-    FROM H_VUE_RESP_HIE
+        SELECT 
+        TRIM(CODHIE) AS CODE_STRUCTURE,
+        TRIM(LIBHIE) AS LIBELLE_STRUCTURE
+        FROM GRHPROD_DAA.H_VUE_STRUC_HIE
     "
     ### open up oracle connection to database ###
     $connectionString = "User Id=$($config.username);Password=$($config.password);Data Source=$dataSource"
@@ -45,8 +46,9 @@ Try{
     $cmd.CommandText = $OracleSQLQuery
     $Departments = [System.Data.DataTable]::new()
     $Departments.Load($cmd.ExecuteReader())
+
+    #Write-information ($Departments.DAA_UC_LIB | ConvertTo-Json)
     $result = [System.Collections.Generic.List[PSCustomObject]]::new()
-    
     foreach($item in $departments){
         $department = @{
             ExternalId  = $item.CODE_STRUCTURE

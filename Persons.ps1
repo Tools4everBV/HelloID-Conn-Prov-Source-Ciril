@@ -56,7 +56,7 @@ Try{
         --DAA_AG_MATRI = 'XXXXX' AND
         (DAA_AA_DATFIN  > TO_DATE('$ReferenceDate', 'DD-MM-YYYY') OR DAA_AA_DATFIN IS NULL)
         AND DAA_AA_NUMORD is not NULL
-        AND RTRIM(DAA_FI_LIB_POS) not like 'VACATAIRE%
+        AND RTRIM(DAA_FI_LIB_POS) not like 'VACATAIRE%'
     "
 
     ### open up oracle connection to database ###
